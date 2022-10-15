@@ -91,16 +91,6 @@ class Createalltables extends Migration
 
         });
 
-        Schema::create('foundandlost', function (Blueprint $table) {
-            $table->id();
-            $table->integer('status')->default('LOST'); //LOST, RECOVERY
-            $table->string('photos');
-            $table->string('description');
-            $table->string('where');
-            $table->date('datecreated');
-
-        });
-
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
             $table->integer('allowed')->default(1);
@@ -113,13 +103,13 @@ class Createalltables extends Migration
 
         Schema::create('areadisableddays', function (Blueprint $table) {
             $table->id();
-            $table->intenger('id_area');
+            $table->integer('id_area');
             $table->date('day');
         });
 
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->intenger('id_unit');
+            $table->integer('id_unit');
             $table->date('id_area');
             $table->datetime('reservation_date');
         });
