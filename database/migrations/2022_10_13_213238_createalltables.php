@@ -34,7 +34,7 @@ class Createalltables extends Migration
             $table->string('name');
             $table->date('birthdate');
         });
-
+        //Veiculo
         Schema::create('unitvehicles', function (Blueprint $table) {
             $table->id();
             $table->integer('id_unit');
