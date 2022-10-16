@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Unit;
 use App\Models\User;
-use illuminate\Http\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
