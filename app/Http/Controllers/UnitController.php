@@ -48,6 +48,11 @@ class UnitController extends Controller
         ]);
 
         if ($validator->fails()) {
+            $array['error'] = $validator->errors()->first();
+            return $array;
+
+        } else {
+
             $name = $request->input('name');
             $birthdate = $request->input('birthdate');
 
@@ -56,10 +61,6 @@ class UnitController extends Controller
             $newPerson->name = $name;
             $newPerson->birthdate = $birthdate;
             $newPerson->save();
-
-        } else {
-            $array['error'] = $validator->errors()->first();
-            return $array;
         }
 
         return $array;
@@ -78,6 +79,10 @@ class UnitController extends Controller
         ]);
 
         if ($validator->fails()) {
+            $array['error'] = $validator->errors()->first();
+            return $array;
+        } else {
+
             $title = $request->input('title');
             $color = $request->input('color');
             $plate = $request->input('plate');
@@ -89,9 +94,6 @@ class UnitController extends Controller
             $newVehicle->plate = $plate;
             $newVehicle->save();
 
-        } else {
-            $array['error'] = $validator->errors()->first();
-            return $array;
         }
 
         return $array;
