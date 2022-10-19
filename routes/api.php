@@ -35,10 +35,10 @@ Route::middleware('auth:api')->group(function () {
 
     //Unidade ler moradores/ veiculos
     Route::get('/unit/{id}', [UnitController::class, 'getInfo']);
-    Route::post('unit/{id}/addperson', [UnitController::class, 'addPerson']);
-    Route::post('unit/{id}/addvehicle', [UnitController::class, 'addVehicle']);
-    Route::post('unit/{id}/removeperson', [UnitController::class, 'removeperson']);
-    Route::post('unit/{id}/removevehicle', [UnitController::class, 'removevehicle']);
+    Route::post('/unit/{id}/addperson', [UnitController::class, 'addPerson']);
+    Route::post('/unit/{id}/addvehicle', [UnitController::class, 'addVehicle']);
+    Route::post('/unit/{id}/removeperson', [UnitController::class, 'removeperson']);
+    Route::post('/unit/{id}/removevehicle', [UnitController::class, 'removevehicle']);
 
     //Remove
 
