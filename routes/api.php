@@ -1,13 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BilletController;
-use App\Http\Controllers\DocController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UnitController;
-use App\Http\Controllers\WallController;
-use App\Http\Controllers\WarningController;
-use App\Models\walllikes;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/ping', function () {
@@ -24,22 +19,25 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/auth/logout', [AuthController::class, 'logout']);
 
     //mural de avisos
-    Route::get('/walls', [WallController::class, 'getAll']);
-    Route::post('/wall/{id}/like', [walllikes::class, 'like']);
+    // Route::get('/walls', [WallController::class, 'getAll']);
+    // Route::post('/wall/{id}/like', [walllikes::class, 'like']);
 
-    //Documentos
-    Route::get('/docs', [DocController::class, 'getAll']);
+    // //Documentos
+    // Route::get('/docs', [DocController::class, 'getAll']);
 
     //Livro de ocorrências
-    Route::get('/warnings', [WarningController::class, 'getWarnings']);
-    Route::post('/warning', [WarningController::class, 'setWarning']);
-    Route::post('/warning/file', [WarningController::class, 'addWarningFile']);
+    // Route::get('/warnings', [WarningController::class, 'getWarnings']);
+    // Route::post('/warning', [WarningController::class, 'setWarning']);
+    // Route::post('/warning/file', [WarningController::class, 'addWarningFile']);
 
     //Boletos
-    Route::get('/billets', [BilletController::class, 'getAll']);
+    // Route::get('/billets', [BilletController::class, 'getAll']);
 
     //Unidade ler moradores/ veiculos
     Route::get('/unit/{id}', [UnitController::class, 'getInfo']);
+    Route::post('unit/{id}/addperson', [UnitController::class, 'addPerson']);
+    Route::post('unit/{id}/addvehicle', [UnitController::class, 'addVehicle']);
+
     Route::post('/unit{id}/removeVeiuclo', [UnitController::class, 'removeVeiuclo']);
     Route::post('/unit{id}/removeVeiuclo', [UnitController::class, 'addVeiculo']);
 
