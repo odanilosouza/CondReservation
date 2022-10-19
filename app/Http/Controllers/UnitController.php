@@ -51,17 +51,16 @@ class UnitController extends Controller
             $array['error'] = $validator->errors()->first();
             return $array;
 
-        } else {
-
-            $name = $request->input('name');
-            $birthdate = $request->input('birthdate');
-
-            $newPerson = new Unitpeople();
-            $newPerson->id_unit = $id;
-            $newPerson->name = $name;
-            $newPerson->birthdate = $birthdate;
-            $newPerson->save();
         }
+
+        $name = $request->input('name');
+        $birthdate = $request->input('birthdate');
+
+        $newPerson = new Unitpeople();
+        $newPerson->id_unit = $id;
+        $newPerson->name = $name;
+        $newPerson->birthdate = $birthdate;
+        $newPerson->save();
 
         return $array;
 
@@ -81,21 +80,34 @@ class UnitController extends Controller
         if ($validator->fails()) {
             $array['error'] = $validator->errors()->first();
             return $array;
-        } else {
-
-            $title = $request->input('title');
-            $color = $request->input('color');
-            $plate = $request->input('plate');
-
-            $newVehicle = new Unitvehicles();
-            $newVehicle->id_unit = $id;
-            $newVehicle->title = $title;
-            $newVehicle->color = $color;
-            $newVehicle->plate = $plate;
-            $newVehicle->save();
-
         }
 
+        $title = $request->input('title');
+        $color = $request->input('color');
+        $plate = $request->input('plate');
+
+        $newVehicle = new Unitvehicles();
+        $newVehicle->id_unit = $id;
+        $newVehicle->title = $title;
+        $newVehicle->color = $color;
+        $newVehicle->plate = $plate;
+        $newVehicle->save();
+
+        return $array;
+
+    }
+
+    public function removePerson($id, Request $request)
+    {
+        $array = ['error' => ''];
+
+        $idItem = $request->input('id');
+        if ($idItem) {
+            Unitpeople::where('id', $idItem)->where('id_unit', $id)->delete();
+        } else {
+            $array['erro'] = 'ID inexistente';
+            return $array;
+        }
         return $array;
 
     }
