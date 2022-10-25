@@ -40,27 +40,30 @@ class DatabaseSeeder extends Seeder
         //Areas comuns do condomínio
 
         DB::table('areas')->insert([
+            'allowed' => '1',
             'title' => 'Academia',
             'covers' => 'gym.jpg',
-            'days' => '1, 2, 4, 5,',
+            'days' => '1, 2, 4, 5',
             'start_time' => '06:00:00',
             'end_time' => '22:00:00',
 
         ]);
 
         DB::table('areas')->insert([
+            'allowed' => '1',
             'title' => 'Piscina',
             'covers' => 'pool.jpg',
-            'days' => '1, 2, 3, 4, 5,',
+            'days' => '1, 2, 3, 4, 5',
             'start_time' => '07:00:00',
             'end_time' => '23:00:00',
 
         ]);
 
         DB::table('areas')->insert([
+            'allowed' => '1',
             'title' => 'Churrasqueira',
             'covers' => 'barbecue.jpg',
-            'days' => ' 1, 2, 4, 5,',
+            'days' => '1, 2, 4, 5',
             'start_time' => '06:00:00',
             'end_time' => '22:00:00',
 

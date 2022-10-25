@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/ping', function () {
     return ['pong', true];
+
 });
 
 Route::get('/401', [AuthController::class, 'unauthorized'])->name('login');
@@ -47,7 +48,7 @@ Route::middleware('auth:api')->group(function () {
 
     //Reservas
 
-    Route::get('/reservations', [ReservationController::class, 'getReservation']);
+    Route::get('/reservations', [ReservationController::class, 'getReservations']);
     //Add reserva
     Route::post('/myreservations{id}', [ReservationController::class, 'setMyReservation']);
 

@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url(/login_admin/low-angle-view-of-skyscrapers.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#img-login{
+    padding-top: 200px;
+    margin-bottom: 20px;
+}
+
+
+#img-login, #login, #senha, #botao, #img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 0px white;
+    font-size: 15px;
+}
+
+#login, #senha{
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 200px;
+    padding-right: 180px;
+    padding-left: 20px;
+    background-color: rgba(211,211,211,255);
+}
+
+#botao{
+    padding: 10px;
+    border-radius: 150px;
+    padding-right: 70px;
+    padding-left: 70px;
+    background-color: rgba(19,44,51,255);
+    margin-bottom: 10px;
+    color: white;
+    cursor: pointer;
+}

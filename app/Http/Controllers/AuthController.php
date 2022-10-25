@@ -51,7 +51,7 @@ class AuthController extends Controller
             ]);
 
             if (!$token) {
-                $array['error'] = 'Ocorreu um erro';
+                $array['error'] = 'Ocorreu um erro no token';
                 return $array;
             }
 
