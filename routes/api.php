@@ -46,7 +46,7 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/unit{id}/removePerson', [UnitController::class, 'removePerson']);
     Route::post('/unit{id}/removeVeiuclo', [UnitController::class, 'removeVeiculo']);
 
-    //Reservas
+    //Reservas => Problemas no array
 
     Route::get('/reservations', [ReservationController::class, 'getReservations']);
     //Add reserva
