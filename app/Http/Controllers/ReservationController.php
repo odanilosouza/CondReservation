@@ -8,7 +8,7 @@ class ReservationController extends Controller
 {
     public function getReservations()
     {
-        $array = ['erro' => ''];
+        $array = ['erro' => '', 'list' => []];
         $daysHelper = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];
 
         $areas = Area::where('allowed', 1)->get();
@@ -26,8 +26,8 @@ class ReservationController extends Controller
 
             foreach ($dayList as $day) {
                 if (intval($day) != $lastDay + 1) {
-                    // $dayGroups[] = $daysHelper[$lastDay];
-                    // $dayGroups[] = $daysHelper[$day];
+                    $dayGroups[] = $daysHelper[$lastDay];
+                    $dayGroups[] = $daysHelper[$day];
                 }
 
                 $lastDay = intval($day);
@@ -48,16 +48,23 @@ class ReservationController extends Controller
             $dates = explode(',', $dates);
             array_pop($dates);
 
-            //Adicionando o último dia
-            // $dayGroups[] = $daysHelper[end($dayList)];
+            //Adicionando o TIME
+            $start = date('H:i', strtotime($area['start_time']));
+            $end = date('H:i', strtotime($area['end_time']));
 
-            echo "AREA: " . $area['title'] . "\n";
-            print_r($dates);
-            echo "\n --------------";
+            foreach ($dates as $dkey => $dValue) {
+                $dates[$dkey] .= ' ' . $start . ' ás ' . $end;
+            }
+            $array['list'][] = [
+                'id' => $area['id'],
+                'cover' => asset('storage/' . $area['cover']),
+                'title' => $area['title'],
+                'dates' => $dates,
+
+            ];
 
         }
 
-        $array['list'] = $areas;
         return $array;
 
     }

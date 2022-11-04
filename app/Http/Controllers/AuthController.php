@@ -99,7 +99,7 @@ class AuthController extends Controller
 
             $array['token'] = $token;
 
-            $user = auth()->user();
+            $user = Auth()->user();
             $array['user'] = $user;
 
             $properties = Unit::select(['id', 'name'])
@@ -138,4 +138,10 @@ class AuthController extends Controller
         auth()->logout();
         return $array;
     }
+
+    public function mostrarView()
+    {
+        return View('login');
+    }
+
 }

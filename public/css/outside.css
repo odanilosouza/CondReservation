@@ -1,0 +1,71 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+}
+
+#grid-item1{
+    background-image: url(./fundo1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+}
+
+#grid-item2{
+    background-color: rgba(241,241,241,255);
+}
+
+#img-login{
+    margin-bottom: 20px;
+}
+
+#formulario{
+    margin-top: 250px;
+}
+
+
+#img-login, #login, #senha, #botao{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 0px white;
+    font-size: 15px;
+}
+
+#login, #senha{
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 200px;
+    padding-right: 180px;
+    padding-left: 20px;
+    background-color: rgba(211,211,211,255);
+}
+
+#botao{
+    padding: 10px;
+    border-radius: 150px;
+    padding-right: 70px;
+    padding-left: 70px;
+    background-color: rgba(19,44,51,255);
+    margin-bottom: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+p{
+    text-align: center;
+}
+
+#esqueci-senha{
+    text-align: center;
+    font-family: sans-serif;
+    color: rgba(19,44,51,255);
+    font-size: 15px;
+}
+
+
