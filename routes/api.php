@@ -19,18 +19,6 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/auth/validate', [AuthController::class, 'validateToken']);
     Route::post('/auth/logout', [AuthController::class, 'logout']);
 
-    //mural de avisos
-    // Route::get('/walls', [WallController::class, 'getAll']);
-    // Route::post('/wall/{id}/like', [walllikes::class, 'like']);
-
-    // //Documentos
-    // Route::get('/docs', [DocController::class, 'getAll']);
-
-    //Livro de ocorrências
-    // Route::get('/warnings', [WarningController::class, 'getWarnings']);
-    // Route::post('/warning', [WarningController::class, 'setWarning']);
-    // Route::post('/warning/file', [WarningController::class, 'addWarningFile']);
-
     //Boletos
     // Route::get('/billets', [BilletController::class, 'getAll']);
 
