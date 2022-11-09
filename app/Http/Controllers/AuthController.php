@@ -73,6 +73,11 @@ class AuthController extends Controller
         return $array;
     }
 
+    public function viewRegister()
+    {
+        return view('register');
+    }
+
     public function login(Request $request)
     {
         $array = ['error' => ''];
@@ -142,6 +147,11 @@ class AuthController extends Controller
     public function mostrarView()
     {
         return View('login');
+    }
+
+    public function home()
+    {
+        return View('home');
     }
 
 }
